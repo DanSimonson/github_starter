@@ -47,6 +47,7 @@ function List({ items, togglePending, removeItem }) {
             onClick={(event) => {
               handlePendingClick(event, item.id);
             }}
+            key={item.id}
           >
             <p>Description: {item.description}</p>
             <p>Quantity: {item.quantity}</p>
@@ -69,6 +70,7 @@ function List({ items, togglePending, removeItem }) {
             onClick={(event) => {
               handlePendingClick(event, item.id);
             }}
+            key={item.id}
           >
             <p>Description: {item.description}</p>
             <p>Quantity: {item.quantity}</p>
