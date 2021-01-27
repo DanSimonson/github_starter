@@ -42,48 +42,44 @@ function List({ items, togglePending, removeItem }) {
     <div>
       <h1>Pending List</h1>
       {pendingListArray.map((item, index) => (
-        <>
-          <div
+        <div
+          onClick={(event) => {
+            handlePendingClick(event, item.id);
+          }}
+          key={item.id}
+        >
+          <p>Description: {item.description}</p>
+          <p>Quantity: {item.quantity}</p>
+          <p>Price: {item.price}</p>
+          <button
             onClick={(event) => {
-              handlePendingClick(event, item.id);
+              handleRemoveClick(event, item.id);
             }}
-            key={item.id}
           >
-            <p>Description: {item.description}</p>
-            <p>Quantity: {item.quantity}</p>
-            <p>Price: {item.price}</p>
-            <button
-              onClick={(event) => {
-                handleRemoveClick(event, item.id);
-              }}
-            >
-              X
-            </button>
-          </div>
-        </>
+            X
+          </button>
+        </div>
       ))}
       <h1>Sum of Pending Items: {summedArray[0]} </h1>
       <h1>Crossed Off List</h1>
       {crossedOffListArray.map((item, index) => (
-        <>
-          <div
+        <div
+          onClick={(event) => {
+            handlePendingClick(event, item.id);
+          }}
+          key={item.id}
+        >
+          <p>Description: {item.description}</p>
+          <p>Quantity: {item.quantity}</p>
+          <p>Price: {item.price}</p>
+          <button
             onClick={(event) => {
-              handlePendingClick(event, item.id);
+              handleRemoveClick(event, item.id);
             }}
-            key={item.id}
           >
-            <p>Description: {item.description}</p>
-            <p>Quantity: {item.quantity}</p>
-            <p>Price: {item.price}</p>
-            <button
-              onClick={(event) => {
-                handleRemoveClick(event, item.id);
-              }}
-            >
-              X
-            </button>
-          </div>
-        </>
+            X
+          </button>
+        </div>
       ))}
     </div>
   );
