@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import "./App.css";
-import ListItem from "./components/ListItem";
+//import ListItem from "./components/ListItem";
 import List from "./components/List";
 import ListForm from "./components/ListForm";
-import styled from "styled-components";
+//import styled from "styled-components";
 const LOCAL_STORAGE_KEY = "items-list";
 function App() {
   const [items, setItems] = useState([]);
@@ -18,7 +18,6 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(items));
-    console.log("items: ", items);
   }, [items]);
 
   function addItem(item) {
@@ -41,13 +40,13 @@ function App() {
   function removeItem(id) {
     setItems(items.filter((item) => item.id !== id));
   }
-  function sortArray() {
+  /*function sortArray() {
     let sorted = [...items];
     if (sorted.length > 1) {
       sorted.sort((a, b) => (a.description > b.description ? 1 : -1));
       setItems(sorted);
     }
-  }
+  }*/
 
   return (
     <div className="App">

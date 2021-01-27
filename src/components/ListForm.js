@@ -7,7 +7,7 @@ const DivForm = styled.div`
   height: 50%;
 `;
 function ListForm({ addItem }) {
-  const [test, setTest] = useState("");
+  //const [test, setTest] = useState("");
   const [items, setItems] = useState({
     id: "",
     description: "",
